@@ -30,7 +30,7 @@ int main(int argc, char **argv)	{
 	sock_addr.sin_family = PF_INET;
 	sock_addr.sin_port = htons(12345);
 	sock_addr.sin_addr.s_addr = htonl(INADDR_ANY);
-	bind(master_socket, (struct sockaddr*)&sock_addr,
+	bind(master_socket, (struct sockaddr*)(&sock_addr),
 		 sizeof(sock_addr));
 
 	set_nonblock(master_socket);
